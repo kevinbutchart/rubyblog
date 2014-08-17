@@ -1,14 +1,22 @@
 class TimerecorderController < ApplicationController
 	def signin
-		@tr = TimeRecord3.new
-		@tr.time = Time.now
-		@tr.recordtype = "in"
+		tr = TimeRecord3.new
+		tr.time = Time.now
+		tr.recordtype = "in"
 	
-  		@tr.save
-		redirect_to 'index'
+  		tr.save
+  		@tr = TimeRecord3.all
+		render 'index'
 	end
 
 	def signout
+		tr = TimeRecord3.new
+		tr.time = Time.now
+		tr.recordtype = "out"
+	
+  		tr.save
+  		@tr = TimeRecord3.all
+		render 'index'
 	end
 
 	def new
