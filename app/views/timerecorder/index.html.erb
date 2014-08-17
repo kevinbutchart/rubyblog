@@ -2,6 +2,25 @@
 <!-- <%= stylesheet_link_tag "application.css" %> -->
 <table>
   <tr>
+    <th>Date</th>
+    <th>AM In</th>
+    <th>AM Out</th>
+    <th>PM In</th>
+    <th>PM Out</th>
+  </tr>
+ 
+<% @dr.each do |dr| %>
+  <tr class="<%= cycle('oddrow', 'evenrow') -%>">
+    <td><%= dr.logdate %></td>
+    <td><%= dr.amintime.strftime('%H:%M') %></td>
+    <td><%= dr.amouttime.strftime('%H:%M') %></td>
+    <td><%= dr.pmintime.strftime('%H:%M') %></td>
+    <td><%= dr.pmouttime.strftime('%H:%M') %></td>
+  </tr>
+<% end %>
+</table>
+<table>
+  <tr>
     <th>Time</th>
     <th>In/Out</th>
   </tr>

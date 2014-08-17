@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  logdate: 2014-08-17
+  amintime: 2014-08-17 22:09:25
+  amouttime: 2014-08-17 22:09:25
+  pmintime: 2014-08-17 22:09:25
+  pmouttime: 2014-08-17 22:09:25
+
+two:
+  logdate: 2014-08-17
+  amintime: 2014-08-17 22:09:25
+  amouttime: 2014-08-17 22:09:25
+  pmintime: 2014-08-17 22:09:25
+  pmouttime: 2014-08-17 22:09:25

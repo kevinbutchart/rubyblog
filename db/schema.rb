@@ -11,14 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140817200653) do
+ActiveRecord::Schema.define(version: 20140817210925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "articles", force: true do |t|
-    t.string   "title"
-    t.text     "text"
+  create_table "day_record3s", force: true do |t|
+    t.date     "logdate"
+    t.time     "amintime"
+    t.time     "amouttime"
+    t.time     "pmintime"
+    t.time     "pmouttime"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -26,13 +29,6 @@ ActiveRecord::Schema.define(version: 20140817200653) do
   create_table "time_record3s", force: true do |t|
     t.datetime "time"
     t.text     "recordtype"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "time_records", force: true do |t|
-    t.datetime "time"
-    t.text     "type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
