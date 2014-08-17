@@ -1,0 +1,17 @@
+<h1>Listing Articles</h1>
+<%= link_to 'New article', new_article_path %>
+<!-- <%= stylesheet_link_tag "application.css" %> -->
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="3"></th>
+  </tr>
+ 
+<% @tr.each do |tr| %>
+  <tr class="<%= cycle('oddrow', 'evenrow') -%>">
+    <td><%= tr.time %></td>
+    <td><%= tr.recordtype %></td>
+  </tr>
+<% end %>
+</table>
