@@ -5,7 +5,7 @@ class TimerecorderController < ApplicationController
 
 	def signin
 		tr = TimeRecord3.new
-		currtime = Time.now
+		currtime = Time.now.localtime
 		t = currtime.to_time
 		t = time_to_next_quarter_hour(t)
 		tr.time = currtime
@@ -34,7 +34,7 @@ class TimerecorderController < ApplicationController
 
 	def signout
 		tr = TimeRecord3.new
-		currtime = Time.now
+		currtime = Time.now.localtime
 		t = currtime.to_time
 		t = time_to_next_quarter_hour(t)
 		tr.time = currtime
