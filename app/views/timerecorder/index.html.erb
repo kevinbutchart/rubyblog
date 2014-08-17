@@ -12,10 +12,10 @@
 <% @dr.each do |dr| %>
   <tr class="<%= cycle('oddrow', 'evenrow') -%>">
     <td><%= dr.logdate %></td>
-    <td><%= dr.amintime.strftime('%H:%M') %></td>
-    <td><%= dr.amouttime.strftime('%H:%M') %></td>
-    <td><%= dr.pmintime.strftime('%H:%M') %></td>
-    <td><%= dr.pmouttime.strftime('%H:%M') %></td>
+    <td><%= dr.amintime.in_time_zone.strftime('%H:%M') %></td>
+    <td><%= dr.amouttime.in_time_zone.strftime('%H:%M') %></td>
+    <td><%= dr.pmintime.in_time_zone.strftime('%H:%M') %></td>
+    <td><%= dr.pmouttime.in_time_zone.strftime('%H:%M') %></td>
   </tr>
 <% end %>
 </table>
