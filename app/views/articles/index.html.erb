@@ -9,7 +9,7 @@
   </tr>
  
 <% @articles.each do |article| %>
-  <tr>
+  <tr class="<%= cycle('oddrow', 'evenrow') -%>">
     <td><%= article.title %></td>
     <td><%= article.text %></td>
     <td><%= link_to 'Show', article_path(article) %></td>
