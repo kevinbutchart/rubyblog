@@ -1,4 +1,7 @@
 class TimerecorderController < ApplicationController
+	http_basic_authenticate_with name: "kevin", password: "secret", except: [:show]
+
+
 	def signin
 		tr = TimeRecord3.new
 		tr.time = Time.now
