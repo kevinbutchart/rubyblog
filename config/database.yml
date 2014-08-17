@@ -22,4 +22,4 @@ test:
 
 production:
   <<: *default
-  database: db/production_pg
+  database: production_pg
