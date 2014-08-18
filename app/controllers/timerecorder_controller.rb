@@ -27,9 +27,10 @@ class TimerecorderController < ApplicationController
 		end
 		dr.save
 
-		@dr = DayRecord3.all
-  		@tr = TimeRecord3.all
-		render 'index'
+		#@dr = DayRecord3.all
+  		#@tr = TimeRecord3.all
+		#render 'index'
+		redirect_to timerecorder_index_path
 	end
 
 	def signout
@@ -56,9 +57,10 @@ class TimerecorderController < ApplicationController
 		end
 		dr.save
 
-		@dr = DayRecord3.all
-  		@tr = TimeRecord3.all
-		render 'index'
+		#@dr = DayRecord3.all
+  		#@tr = TimeRecord3.all
+		#render 'index'
+		redirect_to timerecorder_index_path
 
 	end
 
@@ -72,6 +74,7 @@ class TimerecorderController < ApplicationController
 	end
 
 	def index
+		@dr = DayRecord3.all
   		@tr = TimeRecord3.all
 	end
 

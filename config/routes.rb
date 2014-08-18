@@ -2,7 +2,7 @@ Blog::Application.routes.draw do
  
   resources :articles
  
-  root 'welcome#index'
+  root 'timerecorder#index'
 
   resources :timerecorder do
     collection do
