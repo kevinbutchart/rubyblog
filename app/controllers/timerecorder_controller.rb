@@ -14,16 +14,15 @@ class TimerecorderController < ApplicationController
   		tr.save
 
 		currdate = currtime.to_date
-		dr = DayRecord3.find_by logdate: currdate
-		if (dr) 
-			dr.pmintime = t.in_time_zone
-		else
-			dr = DayRecord3.new
+		dr = DayRecord4.find_by logdate: currdate
+		if (!dr)
+			dr = DayRecord4.new
 			dr.logdate = currdate
-			dr.amintime = t.in_time_zone
-			dr.amouttime = Time.local(Time.now.year, Time.now.month, Time.now.day, 12,0) 
-			dr.pmintime = Time.local(Time.now.year, Time.now.month, Time.now.day, 13,0) 
-			dr.pmouttime = t.in_time_zone
+			dr.inout = t.strftime('%H:%M')
+			dr.hours = 1.0
+		else
+			dr.inout += "\n" + t.strftime('%H:%M')
+			dr.hours = 1.0
 		end
 		dr.save
 
@@ -44,22 +43,19 @@ class TimerecorderController < ApplicationController
   		tr.save
 
 		currdate = currtime.to_date
-		dr = DayRecord3.find_by logdate: currdate
-		if (dr) 
-			dr.pmouttime = t
-		else
-			dr = DayRecord3.new
+		dr = DayRecord4.find_by logdate: currdate
+		if (!dr)
+			dr = DayRecord4.new
 			dr.logdate = currdate
-			dr.amintime = t
-			dr.amouttime = t
-			dr.pmintime = t
-			dr.pmouttime = t
+			dr.inout = '?? - ' + t.strftime('%H:%M')
+			dr.hours = 1.0
+		else
+			dr.inout += ' - ' + t.strftime('%H:%M')
+			dr.hours = 8.0
 		end
 		dr.save
 
-		#@dr = DayRecord3.all
-  		#@tr = TimeRecord3.all
-		#render 'index'
+
 		redirect_to timerecorder_index_path
 
 	end
@@ -74,7 +70,7 @@ class TimerecorderController < ApplicationController
 	end
 
 	def index
-		@dr = DayRecord3.all
+		@dr = DayRecord4.all
   		@tr = TimeRecord3.all
 	end
 
