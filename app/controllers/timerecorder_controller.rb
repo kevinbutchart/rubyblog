@@ -7,7 +7,7 @@ class TimerecorderController < ApplicationController
 		tr = TimeRecord3.new
 		currtime = Time.now.localtime
 		t = currtime.in_time_zone
-		# t = time_to_next_quarter_hour(t)
+		t = time_to_nearest_quarter_hour(t)
 		tr.time = currtime
 		tr.recordtype = "in"
 	
@@ -35,8 +35,8 @@ class TimerecorderController < ApplicationController
 	def signout
 		tr = TimeRecord3.new
 		currtime = Time.now.localtime
-		t = currtime.to_time
-		t = time_to_next_quarter_hour(t)
+		t = currtime.in_time_zone
+		t = time_to_nearest_quarter_hour(t)
 		tr.time = currtime
 		tr.recordtype = "out"
 	
