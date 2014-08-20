@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  logdate: 2014-08-20 08:11:32
+  in1: 2014-08-20 08:11:32
+  out1: 2014-08-20 08:11:32
+  in2: 2014-08-20 08:11:32
+  out2: 2014-08-20 08:11:32
+  hours: 9.99
+  summary: MyText
+
+two:
+  logdate: 2014-08-20 08:11:32
+  in1: 2014-08-20 08:11:32
+  out1: 2014-08-20 08:11:32
+  in2: 2014-08-20 08:11:32
+  out2: 2014-08-20 08:11:32
+  hours: 9.99
+  summary: MyText

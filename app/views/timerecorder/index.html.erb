@@ -10,7 +10,7 @@
 <% @dr.each do |dr| %>
   <tr class="<%= cycle('oddrow', 'evenrow') -%>">
     <td><%= dr.logdate %></td>
-    <td style="white-space: pre-wrap;"><%= dr.inout %></td>
+    <td style="white-space: pre-wrap;"><%= dr.summary %></td>
     <td><%= dr.hours %></td>
   </tr>
 <% end %>
