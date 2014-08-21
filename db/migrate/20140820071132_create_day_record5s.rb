@@ -2,10 +2,10 @@ class CreateDayRecord5s < ActiveRecord::Migration
   def change
     create_table :day_record5s do |t|
       t.date :logdate
-      t.time :in1
-      t.time :out1
-      t.time :in2
-      t.time :out2
+      t.datetime :in1
+      t.datetime :out1
+      t.datetime :in2
+      t.datetime :out2
       t.decimal :hours
       t.text :summary
 

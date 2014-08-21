@@ -21,7 +21,7 @@ class TimerecorderController < ApplicationController
 					if (hours > 4) 
 						summary =  in1timetext	+ " - 12:00\n13:00 - " +  out1timetext	
 					else
-						summary =  in1timetext	+ " - 12:00\n13:00 - " +  out1timetext	
+						summary =  in1timetext	+ " - " +  out1timetext	
 		 			end
 				else
 					summary =  in1timetext	+ " - " +  out1timetext + "\n" + in2timetext += " - "
@@ -44,15 +44,14 @@ class TimerecorderController < ApplicationController
 				hours = 0
 			else
 				if (rec.in2 == nil) 
-					hours = (rec.out1.to_f - rec.in1.to_f)/3600
-					if (hours > 4) 
-						summary =  rec.in1.strftime('%H:%M')	+ " - 12:00\n13:00 - " +  rec.out1.strftime('%H:%M')	
-						hours -= 1
+					hours = (rec.out1.to_i - rec.in1.to_i)/3600.0
+					if (hours > 4.0) 
+						hours -= 1.0 
 		 			end
 				else
-					hours = (rec.out1.to_f - rec.in1.to_f)/3600
+					hours = (rec.out1.to_i - rec.in1.to_i)/3600.0
 					if (rec.out2 != nil)
-						hours += (rec.out2.to_f - rec.in2.to_f)/3600
+						hours += (rec.out2.to_i - rec.in2.to_i)/3600.0
 					end
 				end
 			end
